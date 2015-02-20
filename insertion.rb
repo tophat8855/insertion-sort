@@ -20,15 +20,17 @@ end
 
 def check_sorted(bookmark, array)
   bookmark.downto(1) do |j|
-    if array[j] > array[j+1]
-      array[j], array[j+1] = array[j+1], array[j]
-    end
+    back_sort([array[j], array[j+1]])
     bookmark += 1
-
   end
   bookmark
 end
 
+def back_sort(nums)
+  if nums[0] > nums[1]
+    nums[0], nums[1] = nums[1], nums[0]
+  end
+end
 
 
 sort(array)
